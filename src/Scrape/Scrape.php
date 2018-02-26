@@ -55,7 +55,7 @@ class Scrape
 
         // Ignore errors caused by unsupported HTML5 tags
         libxml_use_internal_errors(true);
-        $this->dom->loadHTML($html);
+        $this->dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
         libxml_clear_errors();
 
         return $this;
