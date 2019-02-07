@@ -32,7 +32,7 @@ class Scrape
      */
     public function __construct($site, $timeout = 2)
     {
-        $this->webClient = new Client(['base_uri' => $site, 'timeout' => $timeout]);
+        $this->webClient = new Client(['base_uri' => $site, 'timeout' => $timeout, 'verify' => false]);
     }
 
     /**
